@@ -16,17 +16,40 @@ interface Project {
   category: 'web' | 'mobile' | 'design'
 }
 
-export function Portfolio() {
-  const [projects] = useKV<Project[]>("portfolio-projects", [
-    {
+const featuredProjects: Project[] = [
+  {
+    id: "note-tracker",
+    title: "Note Tracker",
+    description: "A focused workspace for capturing, organizing, and revisiting notes through a clean, distraction-free interface.",
+    image: "/projects/note-tracker.png",
+    tags: ["Web App", "Note Taking", "Productivity", "Responsive UI"],
+    liveUrl: "https://note-tracker.com/",
+    category: "web"
+  },
+  {
+    id: "smartbucket",
+    title: "SmartBucket",
+    description: "A responsive expense tracker for organizing spending, monitoring budgets, and understanding day-to-day finances.",
+    image: "/projects/smartbucket.png",
+    tags: ["React", "Expense Tracking", "Data Visualization", "Responsive UI"],
+    liveUrl: "https://smartbucket.abdalrhman.dev/",
+    category: "web"
+  },
+   {
       id: "shopsze",
       title: "Shopsze E-commerce Platform",
       description: "A comprehensive e-commerce platform similar to Shopify, built with React and Laravel. Features payment gateway integration, inventory management, and multi-vendor support.",
-      image: "",
-      tags: ["React", "Laravel", "PHP", "MySQL", "REST API", "Payment Gateway"],
-      githubUrl: "https://github.com/abdalrhmankhashashneh",
+      image: "/projects/shopsze.png",
+      tags: ["React", "Cakephp", "PHP", "MySQL", "REST API", "Payment Gateway" , "E-commerce", "Multi-vendor"],
+      liveUrl: "https://shopsze.com.sa/",
       category: "web"
-    },
+    }
+]
+
+export function Portfolio() {
+  const [savedProjects] = useKV<Project[]>("portfolio-projects", [
+    ...featuredProjects,
+   
     {
       id: "restaurant-site",
       title: "Restaurant Services Website",
@@ -73,6 +96,13 @@ export function Portfolio() {
       category: "web"
     }
   ])
+
+  // Keep featured projects visible for returning visitors whose saved portfolio
+  // data predates these additions, while avoiding duplicate cards.
+  const projects = [...featuredProjects, ...(savedProjects ?? [])].filter(
+    (project, index, allProjects) =>
+      allProjects.findIndex(({ id }) => id === project.id) === index
+  )
 
   const containerVariants = {
     hidden: {},
@@ -133,6 +163,14 @@ export function Portfolio() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
+                  {project.image && (
+                    <img
+                      src={project.image}
+                      alt={`${project.title} project preview`}
+                      className="h-full w-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  )}
                   <motion.div 
                     className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100"
                     transition={{ duration: 0.3 }}
@@ -146,21 +184,35 @@ export function Portfolio() {
                     <div className="flex gap-2">
                       {project.liveUrl && (
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                          <Button size="sm" variant="secondary" className="h-8 w-8 p-0">
-                            <Globe className="h-4 w-4" />
+                          <Button asChild size="sm" variant="secondary" className="h-8 w-8 p-0">
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={`Open ${project.title} live site`}
+                            >
+                              <Globe className="h-4 w-4" />
+                            </a>
                           </Button>
                         </motion.div>
                       )}
                       {project.githubUrl && (
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                          <Button size="sm" variant="secondary" className="h-8 w-8 p-0">
-                            <ArrowUpRight className="h-4 w-4" />
+                          <Button asChild size="sm" variant="secondary" className="h-8 w-8 p-0">
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={`Open ${project.title} source code`}
+                            >
+                              <ArrowUpRight className="h-4 w-4" />
+                            </a>
                           </Button>
                         </motion.div>
                       )}
                     </div>
                   </motion.div>
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  {!project.image && <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div 
                       className="text-6xl font-bold text-primary/30"
                       animate={{ 
@@ -176,7 +228,7 @@ export function Portfolio() {
                     >
                       {project.title.charAt(0)}
                     </motion.div>
-                  </div>
+                  </div>}
                 </motion.div>
                 
                 <CardHeader>
@@ -210,6 +262,14 @@ export function Portfolio() {
                       </motion.div>
                     ))}
                   </div>
+                  {project.liveUrl && (
+                    <Button asChild variant="outline" className="mt-6 w-full">
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                        View live project
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
