@@ -43,6 +43,15 @@ const featuredProjects: Project[] = [
       tags: ["React", "Cakephp", "PHP", "MySQL", "REST API", "Payment Gateway" , "E-commerce", "Multi-vendor"],
       liveUrl: "https://shopsze.com.sa/",
       category: "web"
+    },
+   {
+      id: "guide",
+      title: "Personal Guide Platform",
+      description: "A platform for creating and sharing personal guides, built with React and Laravel. Features user authentication, content management, and responsive design.",
+      image: "/projects/personal_guide.png",
+      tags: ["React", "Laravel", "PHP", "MySQL", "REST API", "Content Management", "Responsive Design"],
+      liveUrl: "https://guide.abdalrhman.dev/",
+      category: "web"
     }
 ]
 
