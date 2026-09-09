@@ -52,6 +52,15 @@ const featuredProjects: Project[] = [
       tags: ["React", "Laravel", "PHP", "MySQL", "REST API", "Content Management", "Responsive Design"],
       liveUrl: "https://guide.abdalrhman.dev/",
       category: "web"
+    },
+   {
+      id: "Mega Man Game",
+      title: "Mega Man Game",
+      description: "A classic side-scrolling platformer game inspired by the beloved Mega Man franchise.",
+      image: "/projects/megaman.png",
+      tags: ["Game Development", "JavaScript", "HTML5 Canvas", "2D Platformer", "Retro Gaming" , "Animation", "Sound Effects"],
+      liveUrl: "https://megaman.abdalrhman.dev/",
+      category: "web"
     }
 ]
 
