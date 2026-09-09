@@ -104,28 +104,25 @@ export function About() {
 
             <div className="prose prose-lg text-foreground mb-8">
               <p className="text-muted-foreground leading-relaxed mb-6">
-                With 2+ years of experience in full-stack web development, I specialize in 
-                building user-friendly web applications, e-commerce platforms, and robust APIs. 
-                My expertise spans both front-end and back-end development, with a strong focus 
-                on creating solutions that drive real business growth.
+                With 5+ years of experience in full-stack web development, I specialize in designing and building scalable web applications, SaaS platforms, e-commerce solutions, and robust APIs. My core expertise is in PHP, Laravel, MySQL, JavaScript, jQuery, AJAX, and modern web technologies, with hands-on experience across the entire development lifecycle—from database architecture and backend development to frontend implementation, deployment, optimization, and production support.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                My journey began with a Bachelor's degree in Computer Science from Irbid National 
-                University (82.5%), followed by an intensive 7-month Full-Stack Bootcamp with 
-                Coding Academy by Orange. This solid foundation allowed me to excel in both 
-                technical implementation and graphic design, creating comprehensive digital solutions.
+                I hold a Bachelor's degree in Computer Science from Irbid National University, graduating with an 82.5% average, and completed an intensive 7-month Full-Stack Development Bootcamp at Coding Academy by Orange. This combination of academic knowledge and practical training gave me a strong foundation in software engineering, problem-solving, system design, and building real-world applications.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                At Basic Soft, I've led the development of Shopsze, an e-commerce platform similar 
-                to Shopify, integrating complex payment gateways and managing Linux server deployments. 
-                My work at Orange resulted in a 40% sales boost through an innovative e-commerce 
-                payment gateway solution.
+                Throughout my career, I have worked on a wide range of business-critical systems, including e-commerce platforms, certificate management systems, travel and itinerary solutions, payment integrations, administrative dashboards, and custom business management platforms. At Basic Soft, I contributed to and led the development of Shopsze, an e-commerce platform with functionality similar to Shopify, working on complex features, payment gateway integrations, database design, APIs, and Linux-based server deployment and management.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                During my experience with Orange, I worked on an innovative e-commerce payment gateway solution that contributed to a significant improvement in sales performance. My experience has also included integrating payment providers such as ClickPay, developing RESTful APIs, implementing authentication and multilingual systems, optimizing MySQL queries, troubleshooting production environments, and managing applications on Linux VPS infrastructure.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                I am also the creator of GenerateSystems, a platform focused on accelerating software development by helping generate business systems and application structures more efficiently. Through this work, I have gained deeper experience in software architecture, automation, code generation, database design, performance optimization, and building tools that reduce development time and cost while maintaining code quality.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Beyond development, I enjoy sharing knowledge and supporting other developers. I have experience teaching and mentoring programming concepts, including volunteering as a coding instructor and participating in developer communities. I also continuously explore new technologies, improve my engineering practices, and contribute to projects that solve practical business problems.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Beyond coding, I'm passionate about giving back to the community. I volunteer 
-                as a coding teacher at Lily River Children's Foundation and actively participate 
-                in the Coding Masters Club, mentoring aspiring developers and contributing to 
-                open-source projects on GitHub.
+                I am particularly passionate about backend engineering, system architecture, automation, API development, performance optimization, and turning complex business requirements into reliable, maintainable, and scalable software solutions.
               </p>
             </div>
 
