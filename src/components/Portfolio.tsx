@@ -26,6 +26,15 @@ const featuredProjects: Project[] = [
     liveUrl: "https://note-tracker.com/",
     category: "web"
   },
+   {
+    id: "document-manager",
+    title: "Document Manager",
+    description: "A web application for managing and converting documents, with features to rebuild the documents like powerpoint into a scorm package for e-learning platforms and anather features to categorize and search for documents.",
+    image: "/projects/doc_tools.png",
+    tags: ["Web App", "Document Management", "Search", "Categorization"],
+    liveUrl: "https://tools.abdalrhman.dev/",
+    category: "web"
+  },
   {
     id: "smartbucket",
     title: "SmartBucket",
